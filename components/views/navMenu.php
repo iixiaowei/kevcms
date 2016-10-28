@@ -15,9 +15,11 @@ foreach($results as $rs):
     if($cnt<=0) {
         ?>
         <li class="hover <?php if($i==1){ echo "hover-show hover-shown"; } ?>">
-            <?php if($i==1)  ?>
+            <?php if($i==1){  ?>
+            <a href="/admin">
+            <?php }else{ ?>
             <a href="/admin/<?php echo $rs['action']; ?>/<?php echo $rs['method']; ?>">
-            <a href="/admin/<?php echo $rs['action']; ?>/<?php echo $rs['method']; ?>">
+            <?php } ?>
                 <i class="<?php echo $rs['icon']; ?>"></i>
                 <span class="menu-text"> <?php echo $rs['name']; ?> </span>
             </a>

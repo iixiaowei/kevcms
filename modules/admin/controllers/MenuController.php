@@ -1,7 +1,7 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: Administrator
+ * User: kevin
  * Date: 2016/10/28
  * Time: 14:57
  */
@@ -9,6 +9,10 @@
 namespace app\modules\admin\controllers;
 
 
-class MenuController {
+use app\modules\admin\components\BaseController;
+
+class MenuController extends BaseController {
+
+
 
 }
