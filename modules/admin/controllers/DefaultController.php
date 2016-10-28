@@ -24,6 +24,7 @@ class DefaultController extends BaseController
      */
     public function actionIndex()
     {
+
         $this->initFocus('index','index');
         parent::init();
         return $this->render('index');

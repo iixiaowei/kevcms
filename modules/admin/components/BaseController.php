@@ -13,9 +13,9 @@ class BaseController extends Controller {
     private $_adminid;
     private $_roleid;
     private $_rightids;
-    private $_rightarr;
-    private $_menu;
-    private $_active;
+    public $_rightarr;
+    public $_menu;
+    public $_active;
 
     public function init()
     {
