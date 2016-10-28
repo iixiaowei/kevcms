@@ -12,15 +12,16 @@ use yii\helpers\Html;
 class SideBarWidget extends Widget {
     public $rightids;
     public $rightarr;
+    public $menu;
+    public $active;
 
     public function init(){
         parent::init();
-
     }
 
     public function run(){
 
-        return $this->render('sideBar',['rightids'=>$this->rightids,'rightarr'=>$this->rightarr]);
+        return $this->render('sideBar',['menu'=>$this->menu,'active'=>$this->active,'rightids'=>$this->rightids,'rightarr'=>$this->rightarr]);
     }
 
 

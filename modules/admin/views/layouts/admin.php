@@ -384,7 +384,7 @@ if (empty( $session['adminid'])) {
                 <span class="btn btn-danger"></span>
             </div>
         </div><!-- /.sidebar-shortcuts -->
-        <?= sideBarWidget::widget(['rightids'=>$this->params['rightids'],'rightarr'=>$this->params['rightarr']]); ?>
+        <?= sideBarWidget::widget(['menu'=>$this->params['menu'],'active'=>$this->params['active'],'rightids'=>$this->params['rightids'],'rightarr'=>$this->params['rightarr']]); ?>
         <!-- #section:basics/sidebar.layout.minimize -->
         <div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
             <i class="ace-icon fa fa-angle-double-left" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>

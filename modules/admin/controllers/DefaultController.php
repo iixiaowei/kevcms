@@ -10,12 +10,22 @@ use yii\web\Controller;
  */
 class DefaultController extends BaseController
 {
+    public $menu = null;
+    public $active = null;
+
+    public function init()
+    {
+        parent::init();
+    }
+
     /**
      * Renders the index view for the module
      * @return string
      */
     public function actionIndex()
     {
+        $this->initFocus('index','index');
+        parent::init();
         return $this->render('index');
     }
 }

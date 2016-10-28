@@ -14,6 +14,8 @@ class BaseController extends Controller {
     private $_roleid;
     private $_rightids;
     private $_rightarr;
+    private $_menu;
+    private $_active;
 
     public function init()
     {
@@ -34,6 +36,13 @@ class BaseController extends Controller {
         $view->params['adminname'] = $session['adminname'];
         $view->params['rightids']    = $this->_rightids;
         $view->params['rightarr']    = $this->_rightarr;
+        $view->params['menu']    = $this->_menu;
+        $view->params['active']    = $this->_active;
+    }
+
+    public function initFocus($menu,$active){
+        $this->_menu = $menu;
+        $this->_active = $active;
     }
 
     protected function getRoleId(){
