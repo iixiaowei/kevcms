@@ -10,9 +10,6 @@ use yii\web\Controller;
  */
 class DefaultController extends BaseController
 {
-    public $menu = null;
-    public $active = null;
-
     public function init()
     {
         parent::init();

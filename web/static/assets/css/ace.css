@@ -10289,6 +10289,8 @@ td .lbl:only-child {
   line-height: 37px;
   float: right;
   position: relative;
+  top:-22px;
+  right:-18px;
 }
 .widget-header-large > .widget-toolbar {
   line-height: 48px;

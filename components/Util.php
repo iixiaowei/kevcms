@@ -99,7 +99,7 @@ class Util {
     public static function saveLog($module,$controller,$action,$content){
         $rtime = time();
         $admin_id = \Yii::$app->session['adminid'];
-        $ip = Util::_clientIp();
+        $ip = \Yii::$app->request->userIP;
         $content = serialize($content);
         $sql = "INSERT INTO {{%tbl_logs}} (module,controller,action,content,admin_id,rtime,ip) VALUES (:module,:controller,:action,:content,:admin_id,:rtime,:ip)";
         $cmd = \Yii::$app->db->createCommand($sql);
