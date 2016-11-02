@@ -65,4 +65,32 @@ class MenuController extends BaseController {
         ]);
     }
 
+    public function actionAdd(){
+        $tree = new Tree ();
+        $parentid = intval(\Yii::$app->request->get('parentid'));
+
+        $sql = "select * from {{%tbl_menu}} order by listorder asc,id desc";
+        $cmd = \Yii::$app->db->createCommand($sql);
+        $result = $cmd->queryAll();
+        $array = array();
+        foreach ($result as $r) {
+            $r ['cname'] = $r ['name'];
+            $r ['selected'] = $r ['id'] == $parentid ? 'selected' : '';
+            $array [] = $r;
+        }
+        $str = "<option value='\$id' \$selected>\$spacer \$cname</option>";
+        $tree->init($array);
+        $select_categorys = $tree->get_tree(0, $str);
+        return $this->render('add',[
+            'select_categorys' => $select_categorys
+        ]);
+    }
+
+    public function actionDoadd()
+    {
+
+
+
+    }
+
 }

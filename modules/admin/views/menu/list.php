@@ -109,7 +109,7 @@ use yii\helpers\Url;
 
             <div class="btn-group">
                 <a
-                    href="<?= Url::to('/admin/menu/add/parentid/0') ?>"
+                    href="<?= Url::toRoute(['/admin/menu/add', 'parentid' => 0]) ?>"
                     class="btn btn-sm btn-success"> <i class="fa fa-plus"></i>
                     添加菜单
                 </a>

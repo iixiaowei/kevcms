@@ -38,6 +38,7 @@ if (empty( $session['adminid'])) {
 
     <!--[if lte IE 9]>
     <link rel="stylesheet" href="/static/assets/css/ace-ie.css" />
+    <link rel="stylesheet" href="/static/assets/css/admin.css" />
     <![endif]-->
 
     <!-- inline styles related to this page -->
@@ -408,8 +409,8 @@ if (empty( $session['adminid'])) {
             <!-- #section:basics/footer -->
             <div class="footer-content">
 						<span class="bigger-120">
-							<span class="blue bolder">Ace</span>
-							Application &copy; 2013-2014
+							<span class="blue bolder">KevCms</span>
+                             V1.0 &copy; 2016
 						</span>
 
                 &nbsp; &nbsp;

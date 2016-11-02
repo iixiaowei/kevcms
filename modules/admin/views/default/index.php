@@ -1,3 +1,11 @@
+<?php
+use yii\helpers\Url;
+$session = \Yii::$app->session;
+if (empty( $session['adminid'])) {
+    return Url::to('/admin/public/login');
+    exit;
+}
+?>
 <div class="page-content">
     <!-- #section:settings.box -->
     <div class="ace-settings-container" id="ace-settings-container">
