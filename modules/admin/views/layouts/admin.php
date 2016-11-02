@@ -80,8 +80,8 @@ if (empty( $session['adminid'])) {
             <!-- #section:basics/navbar.layout.brand -->
             <a href="#" class="navbar-brand">
                 <small>
-                    <i class="fa fa-leaf"></i>
-                    Ace Admin
+                    <i class="ace-icon fa fa-cogs"></i>
+                   KevCmsV1.0
                 </small>
             </a>
 
