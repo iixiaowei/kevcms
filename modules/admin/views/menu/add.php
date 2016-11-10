@@ -141,7 +141,7 @@ use yii\helpers\Url;
                 <!-- .sidebar -->
             </div>
 
-            <form class="form-horizontal" role="form" id="form1" action="/admin/menu/doadd" method="post">
+            <form class="form-horizontal" role="form" id="form1" name="form1" action="/admin/menu/doadd" method="post">
                 <!-- #section:elements.form -->
                 <div class="form-group">
                     <label class="col-sm-3 control-label no-padding-right" for="form-field-1">上级菜单</label>
@@ -240,6 +240,7 @@ use yii\helpers\Url;
                         </button>
                     </div>
                 </div>
+                <input type="hidden" name="_csrf" value="<?=Yii::$app->request->getCsrfToken() ?>" />
             </form>
 
 
@@ -253,87 +254,100 @@ use yii\helpers\Url;
 <script src="/static/assets/js/jquery.validate.js"></script>
 <script>
     $(function () {
-        $(function(){
 
-            validator = $("#form1").validate({
-                rules: {
-                    parentid:"required",
-                    name:{
-                        required:true
-                    },
-                    alias_name:"required",
-                    action:"required",
-                    method:"required",
-                    icon:"required",
-                    listorder:"required",
-                    focus:"required",
-                    active:"required"
-
+        validator = $("#form1").validate({
+            rules: {
+                parentid: "required",
+                name: {
+                    required: true
                 },
-                messages: {
-                    parentid:"请选择上级菜单!",
-                    name:{
-                        required:"菜单名称不能为空！"
-                    },
-                    alias_name:"英文名称不能为空！",
-                    action:"控制器名称不能为空！",
-                    method:"操作名称不能为空！",
-                    icon:"图标名称不能为空！",
-                    listorder:"排序不能为空！",
-                    focus:"一级菜单别名不能为空！",
-                    active:"选中菜单别名！"
+                alias_name: "required",
+                action: "required",
+                method: "required",
+                icon: "required",
+                listorder: "required",
+                focus: "required",
+                active: "required"
 
+            },
+            messages: {
+                parentid: "请选择上级菜单!",
+                name: {
+                    required: "菜单名称不能为空！"
                 },
-                errorPlacement: function(error, element) {
-                    if (error.html() != "") {
+                alias_name: "英文名称不能为空！",
+                action: "控制器名称不能为空！",
+                method: "操作名称不能为空！",
+                icon: "图标名称不能为空！",
+                listorder: "排序不能为空！",
+                focus: "一级菜单别名不能为空！",
+                active: "选中菜单别名！"
 
-                        $('#' + element.attr("id")).parent().addClass("state-error");
-                        $('#' + element.attr("id")).siblings("i").addClass("note").css({"color":'red','font-style':'normal','margin-top':'8px','line-height':'35px','margin-left':'5px'}).html( error.html() );
+            },
+            errorPlacement: function (error, element) {
+                if (error.html() != "") {
+
+                    $('#' + element.attr("id")).parent().addClass("state-error");
+                    $('#' + element.attr("id")).siblings("i").addClass("note").css({
+                        "color": 'red',
+                        'font-style': 'normal',
+                        'margin-top': '8px',
+                        'line-height': '35px',
+                        'margin-left': '5px'
+                    }).html(error.html());
 
 
-                    } else {
-                        $('#' + element.attr("id")).parent().removeClass("state-error");
-                        $('#' + element.attr("id")).siblings("i").removeClass("note").css({"color":'red','font-style':'normal','margin-top':'8px','line-height':'35px','margin-left':'5px'}).html("");
-                    }
-                },
-                success: function(label) {
-
+                } else {
+                    $('#' + element.attr("id")).parent().removeClass("state-error");
+                    $('#' + element.attr("id")).siblings("i").removeClass("note").css({
+                        "color": 'red',
+                        'font-style': 'normal',
+                        'margin-top': '8px',
+                        'line-height': '35px',
+                        'margin-left': '5px'
+                    }).html("");
                 }
-            });
+            },
+            success: function (label) {
 
-            $("#btnSubmit").click(function(){
-                fValidator.save();
-            });
-
-            var fValidator = {
-                save:function(){
-                    if( validator.form() ){
-
-                        var form = $('#form1');
-                        var ajax = {
-                            url:"/admin/menu/doadd", data: form.serialize(), type: 'POST', dataType: 'json', cache: false,
-                            success: function(data, statusText) {
-
-
-                                if (data.status == 1) {
-
-                                    window.location.href="/admin/menu/list";
-                                }
-                                else{
-                                    alert(data.message);
-                                }
-
-                            },
-                            error: function(httpRequest, statusText, errorThrown) {
-                                alert( '数据请求时发生错误，请检查' + errorThrown  );
-                            }
-                        };
-                        $.ajax(ajax);
-                        return false;
-                    }
-                }
-            };
-
+            }
         });
+
+        $("#btnSubmit").click(function () {
+            fValidator.save();
+        });
+
+        var fValidator = {
+            save: function () {
+                if (validator.form()) {
+
+                    var form = $('#form1');
+                    var ajax = {
+                        url:SITE_URL+"<?= Url::toRoute('menu/doadd') ?>", data: form.serialize(), type: 'POST', dataType: 'json', cache: false,
+                        success: function (data, statusText) {
+
+
+                            if (data.status == 1) {
+                                window.location.href = SITE_URL+"/admin/menu/list";
+                            }
+                            else {
+
+                                $.each(data.msg,function(name,value) {
+                                    alert(name+"--"+value);
+                                });
+
+                            }
+
+                        },
+                        error: function (httpRequest, statusText, errorThrown) {
+                            alert('数据请求时发生错误，请检查' + errorThrown);
+                        }
+                    };
+                    $.ajax(ajax);
+                    return false;
+                }
+            }
+        };
+
     });
 </script>

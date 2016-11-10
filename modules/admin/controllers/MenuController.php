@@ -12,12 +12,14 @@ namespace app\modules\admin\controllers;
 use app\modules\admin\components\BaseController;
 use app\components\Tree;
 use app\components\Util;
+use app\models;
 
-class MenuController extends BaseController {
+class MenuController extends BaseController
+{
 
     public function actionList()
     {
-        $this->initFocus('sys','sys_menu');
+        $this->initFocus('sys', 'sys_menu');
         parent::init();
 
         $tree = new Tree ();
@@ -60,12 +62,15 @@ class MenuController extends BaseController {
         $tree->init($array);
         $categorys = $tree->get_tree(0, $str);
 
-        return $this->render('list',[
+        return $this->render('list', [
             'categorys' => $categorys
         ]);
     }
 
-    public function actionAdd(){
+    public function actionAdd()
+    {
+        $this->initFocus('sys', 'sys_menu');
+        parent::init();
         $tree = new Tree ();
         $parentid = intval(\Yii::$app->request->get('parentid'));
 
@@ -81,16 +86,34 @@ class MenuController extends BaseController {
         $str = "<option value='\$id' \$selected>\$spacer \$cname</option>";
         $tree->init($array);
         $select_categorys = $tree->get_tree(0, $str);
-        return $this->render('add',[
+        return $this->render('add', [
             'select_categorys' => $select_categorys
         ]);
     }
 
     public function actionDoadd()
     {
+        $menu = new models\TblMenu();
 
+        $menu->create_time = $menu->modify_time = date("Y-m-d H:i:s");
+        //$menu->load(\Yii::$app->request->post());
+        $menu->setAttributes(\Yii::$app->request->post());
 
+        $status = 0;
+        $msg = "";
 
+        if ($menu->validate() && $menu->save(false)) {
+            $status = 1;
+            $msg = "操作成功！";
+        } else {
+            $status = 0;
+            $msg = $menu->getErrors();
+        }
+
+        echo json_encode([
+            'status' => $status,
+            'msg' => $msg
+        ]);
     }
 
 }

@@ -21,7 +21,7 @@ class DefaultController extends BaseController
      */
     public function actionIndex()
     {
-
+//        echo \Yii::getAlias('@vendor');
         $this->initFocus('index','index');
         parent::init();
         return $this->render('index');

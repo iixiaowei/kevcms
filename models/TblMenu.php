@@ -22,6 +22,7 @@ use Yii;
  */
 class TblMenu extends \yii\db\ActiveRecord
 {
+
     /**
      * @inheritdoc
      */
@@ -36,7 +37,7 @@ class TblMenu extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['parentid', 'listorder'], 'integer'],
+            [['parentid', 'listorder'], 'integer','message'=>'必须为数字'],
             [['create_time', 'modify_time'], 'safe'],
             [['name', 'action', 'method'], 'string', 'max' => 30],
             [['icon'], 'string', 'max' => 255],
