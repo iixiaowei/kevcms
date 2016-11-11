@@ -709,10 +709,10 @@ define("dialog-config", {
     cancel: null,
 
     // 确定按钮文本
-    okValue: 'ok',
+    okValue: '确认',
     
     // 取消按钮文本
-    cancelValue: 'cancel',
+    cancelValue: '取消',
 
     cancelDisplay: true,
     

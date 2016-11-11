@@ -162,7 +162,27 @@ use yii\helpers\Url;
             </table>
 
 
-
         </div><!-- /.col -->
     </div><!-- /.row -->
 </div><!-- /.page-content -->
+<script>
+    function checkDel(id)
+    {
+        dialog({
+            title: '提示',
+            content: '确定删除此项?',
+            okValue:'确认',
+            cancelValue:'取消',
+            ok: function () {
+                window.location.href= "<?=Url::toRoute('menu/delete')?>?id="+id;
+            },
+            cancel: true
+        }).width(150).showModal();
+        return false;
+        if(confirm("确定删除此项?")){
+
+        }
+        return false;
+    }
+
+</script>

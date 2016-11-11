@@ -13,7 +13,7 @@ use app\modules\admin\components\BaseController;
 use app\components\Tree;
 use app\components\Util;
 use app\models;
-
+use yii\helpers\Url;
 class MenuController extends BaseController
 {
 
@@ -43,8 +43,8 @@ class MenuController extends BaseController
         $array = array();
         foreach ($result as $r) {
             $r ['cname'] = $r ['name'];
-            $r ['str_manage'] = "<a class=\"btn btn-success btn-xs\"  href='/admin/menu/add/parentid/" . $r ['id'] . "'>添加子菜单</a>";
-            $r ['str_manage'] .= "  <a class=\"btn btn-info btn-xs\"  href='/admin/menu/edit/id/" . $r['id'] . "/parentid/" . $r ['parentid'] . "'>修改</a>";
+            $r ['str_manage'] = "<a class=\"btn btn-success btn-xs\"  href='".Url::toRoute(['menu/add','parentid'=>$r['id']])."'>添加子菜单</a>";
+            $r ['str_manage'] .= "  <a class=\"btn btn-info btn-xs\"  href='".Url::toRoute(['menu/edit','id'=>$r['id'],'parentid'=>$r['parentid']])."'>修改</a>";
             $r ['str_manage'] .= "  <a class=\"btn btn-danger btn-xs\" href='#' onclick='checkDel(" . $r ['id'] . ")'>删除</a>";
             $array [] = $r;
         }
@@ -96,7 +96,6 @@ class MenuController extends BaseController
         $menu = new models\TblMenu();
 
         $menu->create_time = $menu->modify_time = date("Y-m-d H:i:s");
-        //$menu->load(\Yii::$app->request->post());
         $menu->setAttributes(\Yii::$app->request->post());
 
         $status = 0;
@@ -109,11 +108,74 @@ class MenuController extends BaseController
             $status = 0;
             $msg = $menu->getErrors();
         }
-
         echo json_encode([
             'status' => $status,
             'msg' => $msg
         ]);
+    }
+
+    public function actionEdit()
+    {
+        $id = \Yii::$app->request->get('id');
+        $parentid = \Yii::$app->request->get('parentid');
+        $tree = new Tree ();
+        $sql = "select * from {{%tbl_menu}} where id=:id";
+        $cmd = \Yii::$app->db->createCommand ( $sql );
+        $cmd->bindParam(":id", $id);
+        $rs = $cmd->queryOne();
+
+        $sql = "select * from {{%tbl_menu}} order by listorder asc,id desc";
+        $cmd = \Yii::$app->db->createCommand ( $sql );
+        $result = $cmd->queryAll ();
+        $array = array();
+        foreach ( $result as $r ) {
+            $r ['cname'] = $r ['name'];
+            $r ['selected'] = $r ['id'] == $parentid ? 'selected' : '';
+            $array [] = $r;
+        }
+        $str = "<option value='\$id' \$selected>\$spacer \$cname</option>";
+        $tree->init ( $array );
+        $select_categorys = $tree->get_tree ( 0, $str );
+
+        return $this->render ( 'edit', array (
+            'select_categorys' => $select_categorys,
+            'rs' => $rs
+        ) );
+    }
+
+    public function actionDoedit()
+    {
+        $menu = models\TblMenu::find()->where('id=:id',[':id'=>\Yii::$app->request->post('id')])->one();
+        $menu->modify_time = date("Y-m-d H:i:s");
+        $menu->setAttributes(\Yii::$app->request->post());
+
+        $status = 0;
+        $msg = "";
+
+        if ($menu->validate() && $menu->update()) {
+            $status = 1;
+            $msg = "操作成功！";
+        } else {
+            $status = 0;
+            $msg = $menu->getErrors();
+        }
+        echo json_encode([
+            'status' => $status,
+            'msg' => $msg
+        ]);
+    }
+
+    public function actionDelete()
+    {
+        $id = \Yii::$app->request->get('id');
+        if(intval($id)<=0){
+            //return $this->redirect(   array('/admin/public/error','message'=>'非法操作','jumpUrl'=>urlencode('/admin/menu/list'))  );
+            return $this->redirect(   Url::toRoute(['public/error','message'=> '非法操作','jumpUrl'=>urlencode('/admin/menu/list')]) );
+            exit;
+        }
+
+
+
     }
 
 }

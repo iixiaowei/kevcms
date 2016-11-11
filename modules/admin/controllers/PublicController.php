@@ -80,4 +80,21 @@ class PublicController extends Controller {
         return $this->run('/admin/public/login');
     }
 
+    public function actionError()
+    {
+
+        $message =  \Yii::$app->request->get("message");
+        $jumpUrl =  \Yii::$app->request->get("jumpUrl");
+        return $this->render("error",array('message'=>$message,
+            'waitSecond'=>3,'jumpUrl'=>urldecode($jumpUrl)));
+    }
+
+    public function actionSuccess()
+    {
+        $message = \Yii::$app->request->get("message");
+        $jumpUrl = \Yii::$app->request->get("jumpUrl");
+        return $this->render("success",array('message'=>$message,
+            'waitSecond'=>3,'jumpUrl'=>urldecode($jumpUrl)));
+    }
+
 }
