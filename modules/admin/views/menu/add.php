@@ -325,22 +325,32 @@ use yii\helpers\Url;
                     var ajax = {
                         url:SITE_URL+"<?= Url::toRoute('menu/doadd') ?>", data: form.serialize(), type: 'POST', dataType: 'json', cache: false,
                         success: function (data, statusText) {
-
-
                             if (data.status == 1) {
                                 window.location.href = SITE_URL+"/admin/menu/list";
-                            }
-                            else {
-
+                            }else {
+                                var errMsg = "";
                                 $.each(data.msg,function(name,value) {
-                                    alert(name+"--"+value);
+                                   // alert(name+"--"+value);
+                                    errMsg += name+"--"+value+"<br>";
                                 });
-
+                                var d = dialog({
+                                    content: errMsg
+                                });
+                                d.showModal();
+                                setTimeout(function () {
+                                    d.close().remove();
+                                }, 2000);
                             }
 
                         },
                         error: function (httpRequest, statusText, errorThrown) {
-                            alert('数据请求时发生错误，请检查' + errorThrown);
+                            var d = dialog({
+                                content: '数据请求时发生错误，请检查' + errorThrown
+                            });
+                            d.showModal();
+                            setTimeout(function () {
+                                d.close().remove();
+                            }, 2000);
                         }
                     };
                     $.ajax(ajax);

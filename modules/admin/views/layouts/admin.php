@@ -8,7 +8,6 @@ if (empty( $session['adminid'])) {
     return Url::to('/admin/public/login');
     exit;
 }
-
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -52,6 +51,11 @@ if (empty( $session['adminid'])) {
     <script src="/static/assets/js/html5shiv.js"></script>
     <script src="/static/assets/js/respond.js"></script>
     <![endif]-->
+
+    <script src="/static/artDialog/lib/jquery-1.10.2.js"></script>
+    <link rel="stylesheet" href="/static/artDialog/css/ui-dialog.css">
+    <script src="/static/artDialog/dist/dialog-min.js"></script>
+
     <?php $this->head() ?>
 </head>
 
@@ -440,18 +444,6 @@ if (empty( $session['adminid'])) {
 
 <!-- basic scripts -->
 
-<!--[if !IE]> -->
-<script type="text/javascript">
-    window.jQuery || document.write("<script src='/static/assets/js/jquery.js'>"+"<"+"/script>");
-</script>
-
-<!-- <![endif]-->
-
-<!--[if IE]>
-<script type="text/javascript">
-    window.jQuery || document.write("<script src='/static/assets/js/jquery1x.js'>"+"<"+"/script>");
-</script>
-<![endif]-->
 <script type="text/javascript">
     if('ontouchstart' in document.documentElement) document.write("<script src='/static/assets/js/jquery.mobile.custom.js'>"+"<"+"/script>");
 </script>
@@ -517,6 +509,7 @@ if (empty( $session['adminid'])) {
 <script src="/static/docs/assets/js/language/html.js"></script>
 <script src="/static/docs/assets/js/language/css.js"></script>
 <script src="/static/docs/assets/js/language/javascript.js"></script>
+
 <?php $this->endBody() ?>
 </body>
 </html>
