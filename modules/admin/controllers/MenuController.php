@@ -169,10 +169,10 @@ class MenuController extends BaseController
     {
         $id = \Yii::$app->request->get('id');
         if(intval($id)<=0){
-            //return $this->redirect(   array('/admin/public/error','message'=>'非法操作','jumpUrl'=>urlencode('/admin/menu/list'))  );
             return $this->redirect(   Url::toRoute(['public/error','message'=> '非法操作','jumpUrl'=>urlencode('/admin/menu/list')]) );
             exit;
         }
+
 
 
 
