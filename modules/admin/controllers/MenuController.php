@@ -190,6 +190,10 @@ class MenuController extends BaseController
         }
 
         if($menu->delete()){
+            $actionName = \Yii::$app->controller->id;
+            $methodName = \Yii::$app->controller->action->id;
+            $moduleName = \Yii::$app->controller->module->id;
+            Util::saveLog($moduleName, $actionName, $methodName, $menu->toArray());
             return $this->redirect(   Url::toRoute(['default/success','active'=>'sys','focus'=>'sys_menu','message'=> '操作成功','jumpUrl'=>urlencode('/admin/menu/list')]) );
             exit;
         }else{
