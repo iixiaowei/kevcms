@@ -26,4 +26,31 @@ class DefaultController extends BaseController
         parent::init();
         return $this->render('index');
     }
+
+    public function actionError()
+    {
+        $active = \Yii::$app->request->get("active");
+        $focus = \Yii::$app->request->get("focus");
+
+        $this->initFocus($active,$focus);
+        parent::init();
+        $message =  \Yii::$app->request->get("message");
+        $jumpUrl =  \Yii::$app->request->get("jumpUrl");
+        return $this->render("error",array('message'=>$message,
+            'waitSecond'=>3,'jumpUrl'=>urldecode($jumpUrl)));
+    }
+
+    public function actionSuccess()
+    {
+        $active = \Yii::$app->request->get("active");
+        $focus = \Yii::$app->request->get("focus");
+
+        $this->initFocus($active,$focus);
+        parent::init();
+        $message = \Yii::$app->request->get("message");
+        $jumpUrl = \Yii::$app->request->get("jumpUrl");
+        return $this->render("success",array('message'=>$message,
+            'waitSecond'=>3,'jumpUrl'=>urldecode($jumpUrl)));
+    }
+
 }

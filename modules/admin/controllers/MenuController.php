@@ -116,6 +116,9 @@ class MenuController extends BaseController
 
     public function actionEdit()
     {
+
+        $this->initFocus('sys', 'sys_menu');
+        parent::init();
         $id = \Yii::$app->request->get('id');
         $parentid = \Yii::$app->request->get('parentid');
         $tree = new Tree ();
@@ -169,12 +172,30 @@ class MenuController extends BaseController
     {
         $id = \Yii::$app->request->get('id');
         if(intval($id)<=0){
-            return $this->redirect(   Url::toRoute(['public/error','message'=> '非法操作','jumpUrl'=>urlencode('/admin/menu/list')]) );
+            return $this->redirect(   Url::toRoute(['default/error','active'=>'sys','focus'=>'sys_menu','message'=> '非法操作','jumpUrl'=>urlencode('/admin/menu/list')]) );
             exit;
         }
 
+        $childCnt = models\TblMenu::find()->where('parentid=:pid',['pid'=>$id])->count();
+        if($childCnt>0){
+            return $this->redirect(   Url::toRoute(['default/error','active'=>'sys','focus'=>'sys_menu','message'=> '请先删除子菜单','jumpUrl'=>urlencode('/admin/menu/list')]) );
+            exit;
+        }
 
+        $menu = models\TblMenu::findOne($id);
 
+        if(empty($menu)){
+            return $this->redirect(   Url::toRoute(['default/error','active'=>'sys','focus'=>'sys_menu','message'=> '记录不存在','jumpUrl'=>urlencode('/admin/menu/list')]) );
+            exit;
+        }
+
+        if($menu->delete()){
+            return $this->redirect(   Url::toRoute(['default/success','active'=>'sys','focus'=>'sys_menu','message'=> '操作成功','jumpUrl'=>urlencode('/admin/menu/list')]) );
+            exit;
+        }else{
+            return $this->redirect(   Url::toRoute(['default/error','active'=>'sys','focus'=>'sys_menu','message'=> '操作失败','jumpUrl'=>urlencode('/admin/menu/list')]) );
+            exit;
+        }
 
     }
 

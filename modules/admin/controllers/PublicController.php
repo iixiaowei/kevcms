@@ -82,7 +82,7 @@ class PublicController extends Controller {
 
     public function actionError()
     {
-
+        $this->layout = '';
         $message =  \Yii::$app->request->get("message");
         $jumpUrl =  \Yii::$app->request->get("jumpUrl");
         return $this->render("error",array('message'=>$message,
