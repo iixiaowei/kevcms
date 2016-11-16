@@ -113,4 +113,23 @@ class Util {
         $cmd->execute();
     }
 
+    static function getOperatorIdByName($sSearch){
+        $sql = "SELECT id FROM {{%tbl_operator}} WHERE name=:name";
+        $cmd = \Yii::$app->db->createCommand($sql);
+        $cmd->bindParam(":name", $sSearch);
+        $id = $cmd->queryScalar();
+        return $id;
+    }
+
+    static function getOperatorNameById($id){
+        $name = "";
+        $sql = "SELECT name FROM {{%tbl_operator}} WHERE id=:id";
+        $cmd = Yii::app()->db->createCommand($sql);
+        $cmd->bindParam(":id", $id, PDO::PARAM_INT);
+        $name = $cmd->queryScalar();
+        return $name;
+    }
+
+
+
 }

@@ -87,7 +87,4 @@ class BaseController extends Controller {
         }
         return trim($pids,",");
     }
-
-
-
 }
