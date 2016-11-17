@@ -1,39 +1,47 @@
-<!-- Basic Styles -->
-<div class="page-header">
-    <h1>
-        系统设置
-        <small>
-            <i class="ace-icon fa fa-angle-double-right"></i>
-            后台日志
-        </small>
-    </h1>
-</div>
-
-<div class="widget-toolbar no-border">
-    <div class="btn-group">
-        <a href="javascript:void(0)"
-           class="btn btn-sm bg-color-red txt-color-white"
-           style="padding-left: 15px;"><i
-                class="glyphicon glyphicon-list"> </i> 后台日志列表</a>
-    </div>
-</div>
-
-<div class="row">
-    <div class="col-xs-12">
-        <!--<h3 class="header smaller lighter blue">jQuery dataTables</h3>-->
-        <div class="table-header">
-            数据列表
+<?php
+use yii\helpers\Url;
+?>
+<div class="page-content">
+    <div class="page-header">
+        <h1>
+            系统设置
+            <small>
+                <i class="ace-icon fa fa-angle-double-right"></i>
+               操作日志
+            </small>
+        </h1>
+        <div class="widget-toolbar no-border">
+            <div class="btn-group">
+                <a href="javascript:void(0)"
+                   class="btn btn-sm bg-color-red txt-color-white"
+                   style="padding-left: 15px;"><i
+                        class="glyphicon glyphicon-list"> </i> 日志列表</a>
+            </div>
         </div>
+    </div>
 
-        <!-- <div class="table-responsive"> -->
+    <div class="row">
+        <div class="col-xs-12">
+            <!-- PAGE CONTENT BEGINS -->
+            <div class="hidden">
+                <button data-target="#sidebar2" data-toggle="collapse" type="button" class="pull-left navbar-toggle collapsed">
+                    <span class="sr-only">Toggle sidebar</span>
+                    <i class="ace-icon fa fa-dashboard white bigger-125"></i>
+                </button>
 
-        <!-- <div class="dataTables_borderWrap"> -->
-        <div>
+                <div id="sidebar2" class="sidebar h-sidebar navbar-collapse collapse">
+                    <ul class="nav nav-list">
+                        <?= \app\components\NavMenuWidget::widget(['rightarr'=>$this->params['rightarr']]) ?>
+                    </ul><!-- /.nav-list -->
+                </div><!-- .sidebar -->
+            </div>
+
+
             <table id="dt_basic"
                    class="table table-striped table-bordered table-hover">
                 <thead>
                 <tr>
-                    <th width="30px">ID编号</th>
+                    <th width="30px">ID</th>
                     <th width="50px">模型名称</th>
                     <th width="50px">控制器名称</th>
                     <th width="50px">操作名称</th>
@@ -47,9 +55,16 @@
 
                 </tbody>
             </table>
-        </div>
-    </div>
+
+
+        </div><!-- /.col -->
+    </div><!-- /.row -->
+
+
+
 </div>
+
+
 <style>
     .dataTables_wrapper input[type="text"], .dataTables_wrapper input[type="search"], .dataTables_wrapper select {
         margin-bottom: 0 !important;
@@ -61,7 +76,6 @@
         width: auto !important;
     }
 </style>
-
 <script src="/static/plugin/datatables/jquery.dataTables-cust.min.js"></script>
 <script src="/static/plugin/datatables/ColReorder.min.js"></script>
 <script src="/static/plugin/datatables/FixedColumns.min.js"></script>

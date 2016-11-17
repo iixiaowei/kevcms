@@ -124,8 +124,8 @@ class Util {
     static function getOperatorNameById($id){
         $name = "";
         $sql = "SELECT name FROM {{%tbl_operator}} WHERE id=:id";
-        $cmd = Yii::app()->db->createCommand($sql);
-        $cmd->bindParam(":id", $id, PDO::PARAM_INT);
+        $cmd = \Yii::$app->db->createCommand($sql);
+        $cmd->bindParam(":id", $id);
         $name = $cmd->queryScalar();
         return $name;
     }
