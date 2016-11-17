@@ -75,6 +75,8 @@ use yii\helpers\Url;
     .form-inline .input-group > .form-control {
         width: auto !important;
     }
+    .dataTables_length{width:150px;float: left;}
+    .dataTables_filter{width:300px;float: right;}
 </style>
 <script src="/static/plugin/datatables/jquery.dataTables-cust.min.js"></script>
 <script src="/static/plugin/datatables/ColReorder.min.js"></script>
@@ -89,7 +91,8 @@ use yii\helpers\Url;
         $('#dt_basic').dataTable({
             "sPaginationType" : "bootstrap_full",
             "iDisplayLength": 25 ,
-//            "bFilter":false,
+            "bFilter":true,
+            "bInfo": true,
             "oLanguage": {
                 "sUrl": "/static/datatable_zh.txt"
             },
@@ -134,30 +137,5 @@ use yii\helpers\Url;
             ]
 
         });
-
-        $(document).on('click', 'th input:checkbox' , function(){
-            var that = this;
-            $(this).closest('table').find('tr > td:first-child input:checkbox')
-                .each(function(){
-                    this.checked = that.checked;
-                    $(this).closest('tr').toggleClass('selected');
-                });
-        });
-
-
-        $('[data-rel="tooltip"]').tooltip({placement: tooltip_placement});
-        function tooltip_placement(context, source) {
-            var $source = $(source);
-            var $parent = $source.closest('table')
-            var off1 = $parent.offset();
-            var w1 = $parent.width();
-
-            var off2 = $source.offset();
-            //var w2 = $source.width();
-
-            if( parseInt(off2.left) < parseInt(off1.left) + parseInt(w1 / 2) ) return 'right';
-            return 'left';
-        }
-
     });
 </script>
