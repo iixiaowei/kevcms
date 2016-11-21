@@ -38,14 +38,14 @@ use yii\helpers\Url;
 
 
             <table id="dt_basic"
-                   class="table table-striped table-bordered table-hover">
+                   class="table table-striped table-bordered table-hover" style="table-layout:fixed;">
                 <thead>
                 <tr>
-                    <th width="30px">ID</th>
-                    <th width="50px">模型名称</th>
-                    <th width="50px">控制器名称</th>
-                    <th width="50px">操作名称</th>
-                    <th width="260px" style="width:260px;word-break:break-all;word-wrap:break-word;overflow:hidden;white-space：normal;">内容</th>
+                    <th width="40px">ID</th>
+                    <th width="60px">模型名称</th>
+                    <th width="80px">控制器名称</th>
+                    <th width="60px">操作名称</th>
+                    <th width="260px" style="table-layout:fixed; width:260px;word-wrap: break-word;">内容</th>
                     <th width="50px">操作员</th>
                     <th width="180px">操作日期</th>
                     <th width="150px">操作IP</th>
@@ -130,7 +130,7 @@ use yii\helpers\Url;
                 {"mData": 'module'},
                 {"mData": 'controller'},
                 {"mData": 'action'},
-                {"mData": 'content'},
+                {"mData": 'content','sClass':'auto_wrap'},
                 {"mData": 'admin_id'},
                 {"mData": 'rtime'},
                 {"mData": 'ip'}

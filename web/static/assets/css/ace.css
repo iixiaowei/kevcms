@@ -2693,6 +2693,9 @@ body.mob-safari .sidebar.sidebar-fixed {
   margin-right: 0;
   width: 44px;
 }
+.auto_wrap{
+    able-layout:fixed; width:260px;word-wrap: break-word;
+}
 .sidebar.menu-min .nav-list > li > a > .menu-text {
   display: none;
   text-align: left;
