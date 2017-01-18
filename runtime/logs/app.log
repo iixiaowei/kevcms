@@ -1,0 +1,200 @@
+2017-01-02 21:07:43 [127.0.0.1][-][idld173cgne0i4vdien58knec7][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "admin/role/list".' in E:\wamp\www\yii2\kevcmsv1.0\vendor\yiisoft\yii2\base\Module.php:464
+Stack trace:
+#0 E:\wamp\www\yii2\kevcmsv1.0\vendor\yiisoft\yii2\web\Application.php(100): yii\base\Module->runAction('admin/role/list', Array)
+#1 E:\wamp\www\yii2\kevcmsv1.0\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 E:\wamp\www\yii2\kevcmsv1.0\web\index.php(12): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in E:\wamp\www\yii2\kevcmsv1.0\vendor\yiisoft\yii2\web\Application.php:112
+Stack trace:
+#0 E:\wamp\www\yii2\kevcmsv1.0\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 E:\wamp\www\yii2\kevcmsv1.0\web\index.php(12): yii\base\Application->run()
+#2 {main}
+2017-01-02 21:07:43 [127.0.0.1][-][idld173cgne0i4vdien58knec7][info][application] $_COOKIE = [
+    'ace_settings' => '{\"sidebar-collapsed\":-1}'
+    'PHPSESSID' => 'idld173cgne0i4vdien58knec7'
+    '_csrf' => 'cd211a1431b05f9727338593fc9423456ed36363827d290f7f700ef4856f4814a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"8sIy9lKbaoGZsoFkIlz558xFbl7wzmev\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'adminid' => '1'
+    'adminname' => 'admin'
+    'last_logintime' => '2016-09-24 18:15:14'
+    'last_loginip' => '127.0.0.1'
+    'login_token' => '9f7da5286622c639d78c546a6502047c'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'yii2.demo'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.59 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://yii2.demo/admin/menu/list'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_COOKIE' => 'ace_settings=%7B%22sidebar-collapsed%22%3A-1%7D; PHPSESSID=idld173cgne0i4vdien58knec7; _csrf=cd211a1431b05f9727338593fc9423456ed36363827d290f7f700ef4856f4814a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%228sIy9lKbaoGZsoFkIlz558xFbl7wzmev%22%3B%7D'
+    'PATH' => 'C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\system32\\config\\systemprofile\\.dnx\\bin;C:\\Program Files\\Microsoft DNX\\Dnvm\\;C:\\Program Files\\Microsoft SQL Server\\120\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;E:\\wamp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\;C:\\Program Files\\Java\\jdk1.7.0_51\\bin;C:\\Program Files\\Java\\jdk1.7.0_51\\jre\\bin;C:\\Program Files\\TortoiseGit\\bin;C:\\Program Files\\TortoiseSVN\\bin;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.12 (Win64) PHP/5.5.24'
+    'SERVER_NAME' => 'yii2.demo'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'E:/wamp/www/yii2/kevcmsv1.0/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/wamp/www/yii2/kevcmsv1.0/web'
+    'SERVER_ADMIN' => 'iixiaowei@163.com'
+    'SCRIPT_FILENAME' => 'E:/wamp/www/yii2/kevcmsv1.0/web/index.php'
+    'REMOTE_PORT' => '41388'
+    'REDIRECT_URL' => '/admin/role/list'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/admin/role/list'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1483362463.022
+    'REQUEST_TIME' => 1483362463
+]
+2017-01-05 06:32:42 [127.0.0.1][-][6dsbg68jno9cg778efloqbmof0][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "admin/operator/list".' in E:\wamp\www\yii2\kevcmsv1.0\vendor\yiisoft\yii2\base\Module.php:464
+Stack trace:
+#0 E:\wamp\www\yii2\kevcmsv1.0\vendor\yiisoft\yii2\web\Application.php(100): yii\base\Module->runAction('admin/operator/...', Array)
+#1 E:\wamp\www\yii2\kevcmsv1.0\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 E:\wamp\www\yii2\kevcmsv1.0\web\index.php(12): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in E:\wamp\www\yii2\kevcmsv1.0\vendor\yiisoft\yii2\web\Application.php:112
+Stack trace:
+#0 E:\wamp\www\yii2\kevcmsv1.0\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 E:\wamp\www\yii2\kevcmsv1.0\web\index.php(12): yii\base\Application->run()
+#2 {main}
+2017-01-05 06:32:42 [127.0.0.1][-][6dsbg68jno9cg778efloqbmof0][info][application] $_COOKIE = [
+    'ace_settings' => '{\"sidebar-collapsed\":-1}'
+    'PHPSESSID' => '6dsbg68jno9cg778efloqbmof0'
+    '_csrf' => '3c5585387bbf95dd7f313e75a9daf6d292f9bc7bf7663693ac44f8914afdc02ca:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"FaipzJ85yfwoUczyjxBIs2Sce-mZo01_\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'adminid' => '1'
+    'adminname' => 'admin'
+    'last_logintime' => '2016-09-24 18:15:14'
+    'last_loginip' => '127.0.0.1'
+    'login_token' => 'eaf0bc72d18e3158b50824786bad2c0b'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'yii2.demo'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.59 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://yii2.demo/admin'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_COOKIE' => 'ace_settings=%7B%22sidebar-collapsed%22%3A-1%7D; PHPSESSID=6dsbg68jno9cg778efloqbmof0; _csrf=3c5585387bbf95dd7f313e75a9daf6d292f9bc7bf7663693ac44f8914afdc02ca%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22FaipzJ85yfwoUczyjxBIs2Sce-mZo01_%22%3B%7D'
+    'PATH' => 'C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\system32\\config\\systemprofile\\.dnx\\bin;C:\\Program Files\\Microsoft DNX\\Dnvm\\;C:\\Program Files\\Microsoft SQL Server\\120\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;E:\\wamp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\;C:\\Program Files\\Java\\jdk1.7.0_51\\bin;C:\\Program Files\\Java\\jdk1.7.0_51\\jre\\bin;C:\\Program Files\\TortoiseGit\\bin;C:\\Program Files\\TortoiseSVN\\bin;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.12 (Win64) PHP/5.5.24'
+    'SERVER_NAME' => 'yii2.demo'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'E:/wamp/www/yii2/kevcmsv1.0/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/wamp/www/yii2/kevcmsv1.0/web'
+    'SERVER_ADMIN' => 'iixiaowei@163.com'
+    'SCRIPT_FILENAME' => 'E:/wamp/www/yii2/kevcmsv1.0/web/index.php'
+    'REMOTE_PORT' => '43042'
+    'REDIRECT_URL' => '/admin/operator/list'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/admin/operator/list'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1483569162.221
+    'REQUEST_TIME' => 1483569162
+]
+2017-01-15 08:53:10 [127.0.0.1][-][efg6sq2vr6s82hv6v9g31noq01][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "admin/role/list".' in E:\wamp\www\yii2\kevcmsv1.0\vendor\yiisoft\yii2\base\Module.php:464
+Stack trace:
+#0 E:\wamp\www\yii2\kevcmsv1.0\vendor\yiisoft\yii2\web\Application.php(100): yii\base\Module->runAction('admin/role/list', Array)
+#1 E:\wamp\www\yii2\kevcmsv1.0\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 E:\wamp\www\yii2\kevcmsv1.0\web\index.php(12): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in E:\wamp\www\yii2\kevcmsv1.0\vendor\yiisoft\yii2\web\Application.php:112
+Stack trace:
+#0 E:\wamp\www\yii2\kevcmsv1.0\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 E:\wamp\www\yii2\kevcmsv1.0\web\index.php(12): yii\base\Application->run()
+#2 {main}
+2017-01-15 08:53:10 [127.0.0.1][-][efg6sq2vr6s82hv6v9g31noq01][info][application] $_COOKIE = [
+    'PHPSESSID' => 'efg6sq2vr6s82hv6v9g31noq01'
+    '_csrf' => '9da323d19a8a87c15e914f0ba2ee94a050e285ba3ca9122cd4c1d76e16402df0a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"pOiK86oniHXFNAjt-U87MIehkpRqy87R\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'adminid' => '1'
+    'adminname' => 'admin'
+    'last_logintime' => '2016-09-24 18:15:14'
+    'last_loginip' => '127.0.0.1'
+    'login_token' => '263f91550e68f376bc17bb6d3ab9e58c'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'yii2.demo'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.59 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://yii2.demo/admin/menu/list'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8'
+    'HTTP_COOKIE' => 'PHPSESSID=efg6sq2vr6s82hv6v9g31noq01; _csrf=9da323d19a8a87c15e914f0ba2ee94a050e285ba3ca9122cd4c1d76e16402df0a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22pOiK86oniHXFNAjt-U87MIehkpRqy87R%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\ActiveState Komodo IDE 9\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\system32\\config\\systemprofile\\.dnx\\bin;C:\\Program Files\\Microsoft DNX\\Dnvm\\;C:\\Program Files\\Microsoft SQL Server\\120\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;E:\\wamp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\;C:\\Program Files\\Java\\jdk1.7.0_51\\bin;C:\\Program Files\\Java\\jdk1.7.0_51\\jre\\bin;C:\\Program Files\\TortoiseGit\\bin;C:\\Program Files\\TortoiseSVN\\bin;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.12 (Win64) PHP/5.5.24'
+    'SERVER_NAME' => 'yii2.demo'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'E:/wamp/www/yii2/kevcmsv1.0/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'E:/wamp/www/yii2/kevcmsv1.0/web'
+    'SERVER_ADMIN' => 'iixiaowei@163.com'
+    'SCRIPT_FILENAME' => 'E:/wamp/www/yii2/kevcmsv1.0/web/index.php'
+    'REMOTE_PORT' => '2313'
+    'REDIRECT_URL' => '/admin/role/list'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/admin/role/list'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1484441590.407
+    'REQUEST_TIME' => 1484441590
+]
