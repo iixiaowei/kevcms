@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Komodo Project File - DO NOT EDIT -->
+<project id="337fd674-c63c-4e26-b2ad-4a6d2c42f814" kpf_version="5" name="kevcms.komodoproject">
+<preference-set idref="337fd674-c63c-4e26-b2ad-4a6d2c42f814" id="project" preftype="project">
+  <string relative="path" id="import_dirname"></string>
+  <string id="last_local_directory">None</string>
+  <string id="last_remote_directory">None</string>
+  <string id="phpCommentStyle">//,#</string>
+  <string id="phpConfigFile"></string>
+  <string id="phpDefaultInterpreter"></string>
+  <boolean id="phpDoubleClickSelectsEntireVariable">1</boolean>
+  <string id="phpExcludePaths"></string>
+  <string relative="path" id="phpExtraPaths">vendor;E:/wamp/php;E:/wamp/www/yii2/kevcmsv1.0/components;E:/wamp/www/yii2/kevcmsv1.0/modules</string>
+  <long id="prefs_version">1</long>
+  <string id="userEnvironmentStartupOverride">PHP=E:\wamp\php
+YII2=E:\wamp\www\yii2\kevcmsv1.0\vendor
+</string>
+</preference-set>
+</project>

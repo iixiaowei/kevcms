@@ -8,6 +8,7 @@
 namespace app\modules\admin\components;
 
 use yii\web\Controller;
+use yii\helpers\Url;
 
 class BaseController extends Controller {
     private $_adminid;
@@ -21,8 +22,9 @@ class BaseController extends Controller {
     {
         parent::init();
         $session = \Yii::$app->session;
-        if (empty( $session['adminid'])) {
-            return $this->redirect('/admin/public/login');
+         
+        if (empty( $session['adminid']) || $session['adminid']=="") {
+            echo "<script>location.href='/admin/public/login'</script>";
             exit;
         }
 

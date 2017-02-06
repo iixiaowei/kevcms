@@ -79,6 +79,11 @@ class PublicController extends Controller {
         unset($session['login_token']);
         return $this->run('/admin/public/login');
     }
+    
+    public function actionAc(){
+       // $this->renderPartial
+       
+    }
 
     public function actionError()
     {

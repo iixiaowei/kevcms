@@ -75,4 +75,62 @@ class TblMenu extends \yii\db\ActiveRecord
     {
         return new TblMenuQuery(get_called_class());
     }
+    
+    public function getMenuTree($id,$rightids){
+        $menus = $this->find()
+                      ->where(['parentid'=>$id])->orderBy("listorder desc")->asArray()->all();
+        $json_data = array();
+        foreach ($menus as $rs):
+            $id = $rs['id'];
+            $cnt = $this->find()
+                        ->where(['parentid'=>$id])->count();
+            if ($cnt>0){
+                $json_data[]=array(
+                    'id'=>$rs['id'],
+                    'text'=>$rs['name'],
+                    'children'=>$this->getChildTrees($id,$rightids),
+                    'cascadeCheck'=>true,
+                    "checked"=>in_array($id, $rightids)?true:false
+                );
+            }else{
+                $json_data[]=array(
+                    'id'=>$rs['id'],
+                    'text'=>$rs['name'],
+                    'cascadeCheck'=>true,
+                    "checked"=>in_array($id, $rightids)?true:false
+                );
+            }
+            
+        endforeach;
+        return $json_data;
+    }
+    
+    public function getChildTrees($pid,$rightids){
+        $data = array();
+        $menus = $this->find()
+                      ->where(['parentid'=>$pid])->orderBy("listorder desc")->asArray()->all();
+        foreach ($menus as $rs):
+            $id = $rs['id'];
+            $cnt = $this->find()
+                        ->where(['parentid'=>$id])->count();
+            if ($cnt>0){
+                $data[]=array(
+                    'id'=>$rs['id'],
+                    'text'=>$rs['name'],
+                    'children'=>$this->getChildTrees($id,$rightids),
+                    'cascadeCheck'=>true,
+                    "checked"=>in_array($id, $rightids)?true:false
+                );
+            }else{
+                $data[]=array(
+                    'id'=>$rs['id'],
+                    'text'=>$rs['name'],
+                    'cascadeCheck'=>true,
+                    "checked"=>in_array($id, $rightids)?true:false
+                );
+            }
+        endforeach;
+        return $data;
+    }
+    
 }
