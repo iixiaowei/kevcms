@@ -82,7 +82,7 @@ class RoleController extends BaseController{
             $res[$i]['rtime']=$r['rtime'];
             $optStr = "<a class=\"btn btn-info btn-xs\" href=\"javascript:void(0);\" onclick=\"EditRole(".$r['id'].");\">编辑</a>&nbsp;";
             $optStr.="<a class=\"btn btn-success btn-xs\" href=".Url::toRoute(['/admin/role/setright', 'id' => $r['id']]).">栏目权限设置</a>&nbsp;";
-            $optStr.="<a class=\"btn bg-color-blueDark txt-color-white btn-xs\" href=".Url::toRoute(['/admin/role/setright_action', 'id' => $r['id']]).">操作权限设置</a>&nbsp;";
+            //$optStr.="<a class=\"btn bg-color-blueDark txt-color-white btn-xs\" href=".Url::toRoute(['/admin/role/setright_action', 'id' => $r['id']]).">操作权限设置</a>&nbsp;";
             $optStr.="<a class=\"btn btn-danger btn-xs\" href=\"javascript:void(0);\" onclick=\"checkDel(".$r['id'].");\">删除</a>";
             $res[$i]['opt_str']=$optStr;
             $i++;

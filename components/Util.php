@@ -113,7 +113,7 @@ class Util {
         $cmd->execute();
     }
 
-    static function getOperatorIdByName($sSearch){
+    public static function getOperatorIdByName($sSearch){
         $sql = "SELECT id FROM {{%tbl_operator}} WHERE name=:name";
         $cmd = \Yii::$app->db->createCommand($sql);
         $cmd->bindParam(":name", $sSearch);
@@ -121,7 +121,7 @@ class Util {
         return $id;
     }
 
-    static function getOperatorNameById($id){
+    public static function getOperatorNameById($id){
         $name = "";
         $sql = "SELECT name FROM {{%tbl_operator}} WHERE id=:id";
         $cmd = \Yii::$app->db->createCommand($sql);
@@ -130,6 +130,15 @@ class Util {
         return $name;
     }
 
+    public static function getRoleNameById($id)
+    {
+        $name = "";
+        $sql = "SELECT name FROM {{%tbl_role}} WHERE id=:id";
+        $cmd = \Yii::$app->db->createCommand($sql);
+        $cmd->bindParam(":id", $id);
+        $name = $cmd->queryScalar();
+        return $name;
+    }
 
 
 }
