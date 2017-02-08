@@ -77,11 +77,11 @@ use yii\helpers\Url;
     <form id="ff" class="easyui-form" method="post">
         <div style="margin-top: 15px;">
             <label for="name" style="width: 20%;">名称:</label>
-            <input class="easyui-validatebox textbox" type="text" name="name" data-options="required:true,missingMessage:'请输入名称',invalidMessage:'请输入名称'" style="width:60%" />
+            <input class="easyui-validatebox textbox" type="text" id="name" name="name" data-options="required:true,missingMessage:'请输入名称',invalidMessage:'请输入名称'" style="width:60%" />
         </div>
         <div style="margin-top: 15px;">
             <label for="role_id" style="width: 20%;">角色:</label>
-            <select class="easyui-validatebox" name="role_id" style="width:60%">
+            <select class="easyui-validatebox" id="role_id" name="role_id" style="width:60%">
                 <?php foreach($roles as $rs): ?>
                 <option value="<?= $rs['id'] ?>"><?= $rs['name']; ?></option>
                 <?php endforeach; ?>
@@ -89,7 +89,7 @@ use yii\helpers\Url;
         </div>
 
         <div style="margin-top: 15px;">
-            <label for="role_id" style="width: 20%;">是否有效:</label>
+            <label for="is_valid" style="width: 20%;">是否有效:</label>
             <input type="radio" name="is_valid" value="1" checked> 有效
             <input type="radio" name="is_valid" value="0"> 无效
         </div>
@@ -220,23 +220,11 @@ use yii\helpers\Url;
     jQuery(function($) {
 
         $("#btnAdd").click(function(){
-
+        	$("#name").val("");
+        	$('#role_id')[0].selectedIndex = 0;
+        	$('input[name=is_valid]').get(0).checked = true; 
             $('#dlg').dialog('open');
             return false;
-            var d = dialog({
-                    title: '添加角色',
-                    content: '<iframe src="/admin/role/add" id="ifrole" name="ifrole" height="360" width="550" frameborder="0"></iframe>',
-                    okValue: '确定',
-                    ok: function () {
-                        $("#ifrole")[0].contentWindow.submitForm();
-                        return false;
-                    },
-                    cancelValue: '取消',
-                    cancel: function () {
-                        return true;
-                    }
-                });
-            d.showModal();    
         });
     
         $('#dt_basic').dataTable({
