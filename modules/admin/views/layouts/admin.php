@@ -52,9 +52,23 @@ if (empty( $session['adminid'])) {
     <script src="/static/assets/js/respond.js"></script>
     <![endif]-->
 
+    <link rel="stylesheet" href="/js/artDialog/skins/default.css" />
+    
     <script src="/static/artDialog/lib/jquery-1.10.2.js"></script>
     <link rel="stylesheet" href="/static/artDialog/css/ui-dialog.css">
     <script src="/static/artDialog/dist/dialog-min.js"></script>
+    <script src="/js/artDialog/artDialog.js"></script>
+    <script src="/js/artDialog/iframeTools.js"></script>
+    
+    <script type="text/javascript">
+	//全局变量
+	var GV = {
+	    ROOT: "/",
+	    WEB_ROOT: "/",
+	    JS_ROOT: "/js/",
+	    APP:'kevmcs'/*当前应用名*/
+	};
+	</script>
     
     <link rel="stylesheet" type="text/css" href="/easyui/themes/bootstrap/easyui.css">
 	<link rel="stylesheet" type="text/css" href="/easyui/themes/icon.css">
