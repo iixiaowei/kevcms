@@ -54,7 +54,7 @@ class Util {
      * (长度：32 + 4)
      * 三段：一段是微秒,  一段是地址,  一段是随机数
      */
-    public static function  toString() {
+    public static function toString() {
         if (function_exists('com_create_guid')) {
             return com_create_guid();
         } else {
@@ -138,6 +138,11 @@ class Util {
         $cmd->bindParam(":id", $id);
         $name = $cmd->queryScalar();
         return $name;
+    }
+    
+    public static function sp_get_file_extension($filename){
+        $pathinfo=pathinfo($filename);
+        return strtolower($pathinfo['extension']);
     }
 
 

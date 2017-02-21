@@ -66,7 +66,7 @@ if (empty( $session['adminid'])) {
 	    ROOT: "/",
 	    WEB_ROOT: "/",
 	    JS_ROOT: "/js/",
-	    APP:'kevmcs'/*当前应用名*/
+	    APP:'kevcms'/*当前应用名*/
 	};
 	</script>
     

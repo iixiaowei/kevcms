@@ -205,7 +205,7 @@ if (empty( $session['adminid'])) {
 				runtimes : 'html5,flash,silverlight,html4',
 				browse_button : 'select-files', // you can pass an id...
 				container: document.getElementById('container'), // ... or DOM Element itself
-				url : "{:U('asset/asset/plupload')}",
+				url : SITE_URL+"/admin/asset/doupload",
 				flash_swf_url : '/js/plupload/Moxie.swf',
 				silverlight_xap_url : '/js/plupload/Moxie.xap',
 				filters : {
@@ -218,6 +218,7 @@ if (empty( $session['adminid'])) {
 				},
 				init: {
 					PostInit: function() {
+						//alert(SITE_URL);
 					},
 
 					FilesAdded: function(up, files) {

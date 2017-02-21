@@ -70,7 +70,7 @@ use yii\helpers\Url;
 
 </div>
 
-<div id="dlg" class="easyui-dialog" title="添加推荐位" style="width:560px;height:460px;padding:10px 20px;"
+<div id="dlg" class="easyui-dialog" title="添加推荐位" style="width:560px;height:460px;padding:10px 20px;display:none;"
      closed="true" buttons="#dlg-buttons" data-options="iconCls:'icon-save',resizable:false,modal:true">
 
     <form id="ff" class="easyui-form" method="post">
@@ -111,12 +111,12 @@ use yii\helpers\Url;
         
         <input type="hidden" name="id" />
     </form>
-
-</div>
 <div id="dlg-buttons">
     <a href="#" class="easyui-linkbutton" iconCls="icon-ok" onclick="saveOperator()">保存</a>
     <a href="#" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#dlg').dialog('close')">取消</a>
 </div>
+</div>
+
 
 <style>
     .dataTables_wrapper input[type="text"], .dataTables_wrapper input[type="search"], .dataTables_wrapper select {
