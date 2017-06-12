@@ -2,17 +2,16 @@
 /**
  * Created by PhpStorm.
  * User: Administrator
- * Date: 2016/10/26
+ * Date: 2016/10/26                                     
  * Time: 15:29
  */
-
 namespace app\components;
 
 
 class Util {
 
     /**
-     * 系统当前时间
+     * 系统当前时间  test
      */
     private static function  _curTimeMillis() {
         list($usec,  $sec)  =  explode(" ", microtime());

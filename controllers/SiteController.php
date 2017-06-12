@@ -127,9 +127,7 @@ class SiteController extends Controller
 
     public function actionTest(){
 
-        $str = '<a href="http://www.5idev.com/">5idev</a>其他字符<a href="http://www.sohu.com/">sohu</a>';
-        $pattern = "/<a\s([\s\S]*?)>([\s\S]*?)<\/a>/i";
-        print preg_replace($pattern, '\\2', $str);
+       phpinfo();
 
 
     }

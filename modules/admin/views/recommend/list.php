@@ -106,9 +106,6 @@ use yii\helpers\Url;
 		    </a>
 			<input type="button" class="btn btn-small" onclick="$('#thumb-preview').attr('src','/images/default-thumbnail.png');$('#thumb').val('');return false;" value="取消图片">
         </div>
-        
-        
-        
         <input type="hidden" name="id" />
     </form>
 <div id="dlg-buttons">
@@ -116,7 +113,6 @@ use yii\helpers\Url;
     <a href="#" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#dlg').dialog('close')">取消</a>
 </div>
 </div>
-
 
 <style>
     .dataTables_wrapper input[type="text"], .dataTables_wrapper input[type="search"], .dataTables_wrapper select {
